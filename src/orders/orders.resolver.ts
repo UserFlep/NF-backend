@@ -1,7 +1,10 @@
 import { Args, Query, Resolver } from '@nestjs/graphql'
 import { RetailService } from '../retail_api/retail.service'
 import { OrdersResponse } from '../graphql'
+import { UseGuards } from '@nestjs/common'
+import { AuthGuard } from 'src/common/auth.guard'
 
+@UseGuards(AuthGuard)
 @Resolver('Orders')
 export class OrdersResolver {
   constructor(private retailService: RetailService) {}
