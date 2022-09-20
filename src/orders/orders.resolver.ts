@@ -10,4 +10,10 @@ export class OrdersResolver {
   async order(@Args('number') id: string) {
     return this.retailService.findOrder(id)
   }
+
+  @Query()
+  async getOrders(@Args('page') page: number) {
+    const [orders, pagination] = await this.retailService.orders({page})
+    return {orders, pagination} as OrdersResponse
+  }
 }

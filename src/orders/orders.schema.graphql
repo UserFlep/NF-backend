@@ -26,7 +26,7 @@ type OrderItem {
     status: String!
     quantity: Int!
     offer: OrderItemOffer
-    comment: String!
+    comment: String
 }
 
 type Order {

@@ -1,4 +1,4 @@
-import { Query, Resolver } from '@nestjs/graphql'
+import {Args, Query, Resolver} from '@nestjs/graphql'
 import { RetailService } from '../retail_api/retail.service'
 import { DeliveryType, OrderStatus, ProductStatus } from '../graphql'
 
@@ -15,7 +15,7 @@ export class ReferenceResolver {
   async productStatuses(): Promise<ProductStatus[]> {
     return this.retailService.productStatuses()
   }
-
+//Сделано
   @Query()
   async orderStatuses(): Promise<OrderStatus[]> {
     return this.retailService.orderStatuses()

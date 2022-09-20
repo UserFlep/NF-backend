@@ -38,7 +38,7 @@ export interface OrderItem {
     status: string;
     quantity: number;
     offer?: Nullable<OrderItemOffer>;
-    comment: string;
+    comment?: Nullable<string>;
 }
 
 export interface Order {
